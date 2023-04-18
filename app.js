@@ -1,16 +1,18 @@
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-list");
+"use strict";
 
-todoButton.addEventListener("click", addTodo);
+const switcher = document.querySelector(".btn");
 
-function addTodo(event)
+switcher.addEventListener("click", function()
 {
-    event.preventDefault();
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
+    document.body.classList.toggle("dark-theme")
 
-    const newTodo = document.createElement("li");
-    newTodo.innerText = "hey";
-    newTodo.classList.add('todo-item');
-}
+    let className = document.body.className;
+    if(className == "light-theme")
+    {
+    this.textContent = "Dark";
+    }
+    else
+    {
+    this.textContent = "Light";
+    }
+});
